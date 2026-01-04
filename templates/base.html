@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description"
+              content="CoinCast is an interactive crypto price analysis tool built in Python, featuring historical data visualization and short-term price forecasting. The project is fully containerized and deployed via automated cloud infrastructure.">
+        <meta name="keywords"
+              content="cryptocurrency, crypto price analysis, bitcoin, ethereum, price forecasting, historical data visualization, crypto tool, blockchain, market analysis, trading, finance, crypto dashboard">
+        <title>CoinCast | Crypto Data Visualization Platform</title>
+        <link rel="icon"
+              type="image/x-icon"
+              href="{{ url_for('static', filename='img/icon.ico') }}">
+        <link href="{{ url_for('static', filename='css/style.css') }}"
+              rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+              rel="stylesheet" />
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <footer id="credits">
+            <span class="left">
+                MADE WITH ❤️ BY <a href="https://buymeacoffee.com/ohey">OHEY</a>
+                <br />
+                PROJECT
+                <a href="https://github.com/oheyek/CoinCast">GITHUB</a>
+            </span>
+        </footer>
+    </body>
+</html>
