@@ -68,6 +68,12 @@ body {
   color: #f5f5f5;
 }
 
+p {
+  color: #34c5b4;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
 a {
   color: #34c5b4;
   text-decoration: none;
