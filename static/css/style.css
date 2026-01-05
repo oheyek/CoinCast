@@ -10,73 +10,49 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-position: center;
   overflow: hidden;
-  background:
-    radial-gradient(circle at top left, #b7e0b9 0%, transparent 40%),
-    radial-gradient(circle at bottom right, #34c5b4 0%, transparent 45%),
-    linear-gradient(135deg, #fefefe 0%, #eaf6f4 100%);
-  background-attachment: fixed;
+  background-color: #1e1e2f;
 }
 
 #main-container {
   text-align: center;
   width: 350px;
-  background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  border-radius: 10px;
+  background-color: rgba(30, 30, 47, 0.8);
+  border: 2px solid rgba(52, 197, 180, 0.5);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 20px rgba(52, 197, 180, 0.4);
+  color: #f5f5f5;
+  border-radius: 12px;
   padding: 30px 40px 0px;
 }
 
 #main-container h1 {
   font-size: 36px;
   margin-bottom: 15px;
-  color: black;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+  text-shadow: 2px 2px 6px rgba(52, 197, 180, 0.5);
 }
 
-#main-container h2 {
-  margin-bottom: 15px;
-  color: #3d84aa;
-  text-shadow: 1px 1px 2px rgba(61, 132, 170, 0.4);
-}
-
-#category-buttons button {
+#crypto-select select {
+  text-align: center;
+  color: #f5f5f5;
   width: 100%;
   height: 45px;
-  background: #fff;
-  border: 1px dashed lightslategrey;
+  background: #1e1e2f;
+  border: 1px solid #34c5b4;
   outline: none;
   border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   font-size: 16px;
-  color: #333;
-  font-weight: 600;
+  box-shadow: 0 0 10px rgba(52, 197, 180, 0.3);
   margin-bottom: 20px;
-}
-
-#category-buttons button:hover,
-#category-buttons button:focus {
-  background: #34c5b4;
-  color: #fff;
-  border-color: #34c5b4;
-  outline: none;
-  font-weight: 700;
   transition: 0.3s ease;
 }
 
-#category-buttons button:active {
-  transform: scale(0.98);
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+#convert-inputs select:hover,
+#convert-inputs select:focus {
+  background: #34c5b4;
+  color: #1e1e2f;
+  border-color: #b7e0b9;
 }
 
 #credits {
@@ -89,20 +65,16 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
-}
-
-p {
-  color: #3d84aa;
-  font-weight: 600;
+  color: #f5f5f5;
 }
 
 a {
-  color: #3d84aa;
+  color: #34c5b4;
   text-decoration: none;
 }
 
 a:hover {
-  color: #34c5b4;
+  color: #b7e0b9;
   transition: all 0.5s ease;
 }
 

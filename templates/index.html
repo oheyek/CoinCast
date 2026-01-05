@@ -3,10 +3,24 @@
 {% block body %}
     <div id="main-container">
         <h1>CoinCast</h1>
-        <h2>SELECT DESIRED CRYPTO</h2>
-        <div id="category-buttons">
+        <div id="crypto-select">
             <form method="post" action="/">
-                <button name="action" value="temperature" type="submit">PLACEHOLDER</button>
+                <select name="crypto-select-box"
+                        id="crypto-select-box"
+                        required
+                        onchange="this.form.submit()">
+                    <option value="" disabled selected hidden>Select desired crypto</option>
+                    <option value="Bitcoin">BTC</option>
+                    <option value="Ethereum">ETH</option>
+                    <option value="Tether">USDT</option>
+                    <option value="Binance Coin">BNB</option>
+                    <option value="Solana">SOL</option>
+                    <option value="Ripple">XRP</option>
+                    <option value="Cardano">ADA</option>
+                    <option value="Dogecoin">DOGE</option>
+                    <option value="Polkadot">DOT</option>
+                    <option value="USDC">USDC</option>
+                </select>
             </form>
         </div>
     </div>
