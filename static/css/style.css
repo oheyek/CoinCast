@@ -10,13 +10,14 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   background-color: #1e1e2f;
 }
 
 #main-container {
   text-align: center;
-  width: 350px;
+  width: 500px;
+  max-width: 90vw;
   background-color: rgba(30, 30, 47, 0.8);
   border: 2px solid rgba(52, 197, 180, 0.5);
   backdrop-filter: blur(15px);
@@ -46,13 +47,43 @@ body {
   box-shadow: 0 0 10px rgba(52, 197, 180, 0.3);
   margin-bottom: 20px;
   transition: 0.3s ease;
+  font-weight: 600;
 }
 
-#convert-inputs select:hover,
-#convert-inputs select:focus {
+#crypto-select select:hover,
+#crypto-select select:focus {
   background: #34c5b4;
   color: #1e1e2f;
   border-color: #b7e0b9;
+  font-weight: 700;
+}
+
+#crypto-select button {
+  width: 100%;
+  height: 45px;
+  background: white;
+  border: 1px solid #b7e0b9;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(52, 197, 180, 0.3);
+  cursor: pointer;
+  font-size: 16px;
+  color: #1e1e2f;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+#crypto-select button:hover,
+#crypto-select button:focus {
+  background: #34c5b4;
+  color: #1e1e2f;
+  border-color: #34c5b4;
+  font-weight: 700;
+}
+
+#crypto-select button:active {
+  transform: scale(0.98);
 }
 
 #credits {
@@ -74,6 +105,34 @@ p {
   margin-bottom: 10px;
 }
 
+#forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgba(30, 30, 47, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(52, 197, 180, 0.3);
+}
+
+#forecast-table th,
+#forecast-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(52, 197, 180, 0.3);
+  color: #f5f5f5;
+}
+
+#forecast-table th {
+  background-color: #34c5b4;
+  color: #1e1e2f;
+  font-weight: 700;
+}
+
+#forecast-table tbody tr:hover {
+  background-color: rgba(52, 197, 180, 0.1);
+}
+
 a {
   color: #34c5b4;
   text-decoration: none;
@@ -82,6 +141,14 @@ a {
 a:hover {
   color: #b7e0b9;
   transition: all 0.5s ease;
+}
+
+#disclaimer {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 12px;
+  color: #b7e0b9;
+  text-align: center;
 }
 
 #credits .right {

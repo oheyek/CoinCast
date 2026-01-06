@@ -5,23 +5,54 @@
         <h1>CoinCast</h1>
         <div id="crypto-select">
             <form method="post" action="/">
-                <select name="crypto-select-box"
-                        id="crypto-select-box"
-                        required
-                        onchange="this.form.submit()">
-                    <option value="" disabled selected hidden>Select desired crypto</option>
-                    <option value="bitcoin">BTC</option>
-                    <option value="ethereum">ETH</option>
-                    <option value="tether">USDT</option>
-                    <option value="binancecoin">BNB</option>
-                    <option value="solana">SOL</option>
-                    <option value="ripple">XRP</option>
-                    <option value="cardano">ADA</option>
-                    <option value="dogecoin">DOGE</option>
-                    <option value="polkadot">DOT</option>
+                <select name="crypto-select-box" id="crypto-select-box" required>
+                    <option value="" disabled {% if not crypto_name %}selected{% endif %} hidden>Select desired crypto</option>
+                    <option value="bitcoin" {% if crypto_name == "bitcoin" %}selected{% endif %}>BTC</option>
+                    <option value="ethereum"
+                            {% if crypto_name == "ethereum" %}selected{% endif %}>ETH</option>
+                    <option value="tether" {% if crypto_name == "tether" %}selected{% endif %}>USDT</option>
+                    <option value="binancecoin"
+                            {% if crypto_name == "binancecoin" %}selected{% endif %}>BNB</option>
+                    <option value="solana" {% if crypto_name == "solana" %}selected{% endif %}>SOL</option>
+                    <option value="ripple" {% if crypto_name == "ripple" %}selected{% endif %}>XRP</option>
+                    <option value="cardano" {% if crypto_name == "cardano" %}selected{% endif %}>ADA</option>
+                    <option value="dogecoin"
+                            {% if crypto_name == "dogecoin" %}selected{% endif %}>DOGE</option>
+                    <option value="polkadot"
+                            {% if crypto_name == "polkadot" %}selected{% endif %}>DOT</option>
                 </select>
+                <button type="submit" name="action" value="get_price">GET CURRENT PRICE</button>
+                {% if crypto_name %}
+                    <button type="submit" name="action" value="get_forecast">GET 30 DAYS PRICE FORECAST</button>
+                {% endif %}
             </form>
             {% if current_price is not none %}<p>Current price: {{ current_price }}</p>{% endif %}
+            {% if forecast_data %}
+                {% if forecast_data is mapping %}
+                    <h2>30-Day Price Forecast</h2>
+                    <table id="forecast-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Predicted Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for day, price in forecast_data.items() %}
+                                <tr>
+                                    <td>{{ day }}</td>
+                                    <td>{{ price }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>{{ forecast_data }}</p>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div id="disclaimer">
+            <p>This project is not investment advice; it's only a portfolio project.</p>
         </div>
     </div>
 {% endblock %}

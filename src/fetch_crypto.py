@@ -15,6 +15,12 @@ def get_current_price(cryptocurrency):
         return "Free api time exceed, try again later."
 
 
-# response = requests.get(
-#     "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30"
-# )
+def get_historical_data(cryptocurrency):
+    try:
+        response = requests.get(
+            f"https://api.coingecko.com/api/v3/coins/{cryptocurrency}/market_chart?vs_currency=usd&days=30"
+        )
+        data = response.json()
+        return [item[1] for item in data["prices"]]
+    except KeyError:
+        return "Free api time exceed, try again later."
