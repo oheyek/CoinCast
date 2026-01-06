@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import src.fetch_crypto
+import src.predict
 
 app = Flask(__name__)
 
@@ -18,7 +19,7 @@ def main():
             current_price = src.fetch_crypto.get_current_price(crypto_name.lower())
         elif action == "get_forecast":
             current_price = src.fetch_crypto.get_current_price(crypto_name.lower())
-            forecast_data = "None"
+            forecast_data = src.predict.predict_crypto_data(crypto_name.lower())
 
     return render_template(
         "index.html",

@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
-from fetch_crypto import get_historical_data
+from src.fetch_crypto import get_historical_data
 from cachetools import TTLCache, cached
 
 cache = TTLCache(maxsize=15, ttl=300)
@@ -10,7 +10,7 @@ cache = TTLCache(maxsize=15, ttl=300)
 def predict_crypto_data(cryptocurrency):
     prices = get_historical_data(cryptocurrency)
     if isinstance(prices, str):
-        raise RuntimeError(prices)
+        return prices
 
     prices = np.array(prices[-30:])
 

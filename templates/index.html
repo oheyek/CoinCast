@@ -27,7 +27,32 @@
                 {% endif %}
             </form>
             {% if current_price is not none %}<p>Current price: {{ current_price }}</p>{% endif %}
-            {% if forecast_data %}<p>Forecast: {{ forecast_data }}</p>{% endif %}
+            {% if forecast_data %}
+                {% if forecast_data is mapping %}
+                    <h2>30-Day Price Forecast</h2>
+                    <table id="forecast-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Predicted Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for day, price in forecast_data.items() %}
+                                <tr>
+                                    <td>{{ day }}</td>
+                                    <td>{{ price }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>{{ forecast_data }}</p>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div id="disclaimer">
+            <p>This project is not investment advice; it's only a portfolio project.</p>
         </div>
     </div>
 {% endblock %}
