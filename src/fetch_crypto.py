@@ -29,7 +29,6 @@ def get_current_price(cryptocurrency: str) -> str:
         return "Free api time exceed, try again later."
 
 
-@cached(cache)
 def get_historical_data(cryptocurrency: str) -> Union[List[float], str]:
     """
     Get historical price data for a cryptocurrency over the last 30 days.
