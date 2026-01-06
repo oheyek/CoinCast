@@ -46,13 +46,43 @@ body {
   box-shadow: 0 0 10px rgba(52, 197, 180, 0.3);
   margin-bottom: 20px;
   transition: 0.3s ease;
+  font-weight: 600;
 }
 
-#convert-inputs select:hover,
-#convert-inputs select:focus {
+#crypto-select select:hover,
+#crypto-select select:focus {
   background: #34c5b4;
   color: #1e1e2f;
   border-color: #b7e0b9;
+  font-weight: 700;
+}
+
+#crypto-select button {
+  width: 100%;
+  height: 45px;
+  background: white;
+  border: 1px solid #b7e0b9;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(52, 197, 180, 0.3);
+  cursor: pointer;
+  font-size: 16px;
+  color: #1e1e2f;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+#crypto-select button:hover,
+#crypto-select button:focus {
+  background: #34c5b4;
+  color: #1e1e2f;
+  border-color: #34c5b4;
+  font-weight: 700;
+}
+
+#crypto-select button:active {
+  transform: scale(0.98);
 }
 
 #credits {
