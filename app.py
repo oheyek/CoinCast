@@ -1,3 +1,9 @@
+"""
+CoinCast Flask application.
+
+This module contains the main Flask app for CoinCast, handling routes for crypto price fetching and prediction.
+"""
+
 from flask import Flask, render_template, request
 import src.fetch_crypto
 import src.predict
@@ -6,7 +12,14 @@ app = Flask(__name__)
 
 
 @app.route("/", methods=["GET", "POST"])
-def main():
+def main() -> str:
+    """
+    Main route handler for GET and POST requests.
+
+    Handles crypto price fetching and prediction based on form data.
+
+    @return: Rendered HTML template as string.
+    """
     crypto_name = None
     current_price = None
     forecast_data = None
