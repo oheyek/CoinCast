@@ -24,6 +24,8 @@ A powerful web application for cryptocurrency price forecasting with an intuitiv
 
 ### Using Docker (Recommended)
 
+Docker image available at: **[Docker Hub - oheyek/coin-cast](https://hub.docker.com/r/oheyek/coin-cast)**
+
 1. Pull the Docker image:
    ```bash
    docker pull oheyek/coin-cast
@@ -170,4 +172,3 @@ Made with ❤️ by ohey<br>
 ---
 
 Due to the short limit of the free API, the site is not deployed as it can even get data once. If you find this project useful, consider buying me a coffee! ☕
-
