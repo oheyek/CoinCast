@@ -1,7 +1,7 @@
 [project]
 name = "coincast"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "An interactive crypto price analysis tool built in Python, featuring historical data visualization and short-term price forecasting. The project is fully containerized and deployed via automated cloud infrastructure."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
