@@ -67,3 +67,11 @@ jobs:
       - name: Push Docker image
         run: |
           docker push $IMAGE_NAME:latest
+
+  deploy-render:
+    needs: build-docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render deploy
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
